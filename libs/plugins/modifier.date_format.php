@@ -26,6 +26,9 @@
  * @return string |void
  * @uses   smarty_make_timestamp()
  */
+
+if (!function_exists('smarty_modifier_date_format')) {
+
 function smarty_modifier_date_format($string, $format = null, $default_date = '', $formatter = 'auto')
 {
     if ($format === null) {
@@ -83,4 +86,6 @@ function smarty_modifier_date_format($string, $format = null, $default_date = ''
     } else {
         return date($format, $timestamp);
     }
+}
+
 }
